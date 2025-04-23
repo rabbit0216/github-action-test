@@ -1,0 +1,14 @@
+service:
+  dash:
+    build:
+      context: ./
+      dockerfile: dockerfile # 사용할 Dockerfile 이름
+    ports:
+      - "8050:8050"
+    networks:
+      - saedori-network
+    restart: always
+
+networks:
+  saedori-network:
+    driver: bridge
